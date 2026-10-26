@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vulnscan"
+version = "1.1.0"
+description = "Aggregated web + network vulnerability scanner"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "rich>=13.0",
+    "defusedxml>=0.7",
+    "dnspython>=2.4",
+    "beautifulsoup4>=4.12",
+]
+
+[project.scripts]
+vulnscan = "vulnscan.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["vulnscan*"]
